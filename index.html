@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+	<title>Olivia Wong</title>
+	<link href='http://fonts.googleapis.com/css?family=Sacramento' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/flexslider.css">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<ul class="menu">
+		<li><a href="#about">About</a></li>
+		<li><a href="#favs">Favourites</a></li>
+		<li><a href="#contact">Talk to Me</a></li>
+	</ul>
+
+	<header>
+	 <img class="logo" > 
+		<h1>Olivia Wong</h1>
+		<h2>Author, Poet, Web designer, Entrepreneur </h2>
+	</header>
+
+	<section id="about">
+		<h1>About Me</h1>
+
+		<img class="profile" src="images/profile.jpg">
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur libero voluptate eligendi quae impedit quos quia esse error mollitia velit. Necessitatibus distinctio a quis expedita ipsam ad facere natus nemo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur libero voluptate eligendi quae impedit quos quia esse error mollitia velit. Necessitatibus distinctio a quis expedita ipsam ad facere natus nemo. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+		<p>Consequuntur libero voluptate eligendi quae impedit quos quia esse error mollitia velit. Necessitatibus distinctio a quis expedita ipsam ad facere natus nemo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur libero voluptate eligendi quae impedit quos quia esse error mollitia velit. Necessitatibus distinctio a quis expedita ipsam ad facere natus nemo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur libero voluptate eligendi quae impedit quos quia esse error mollitia velit. Necessitatibus distinctio a quis expedita ipsam ad facere natus nemo.</p>
+	</section>
+
+	<section id="favs">
+		<h1>My Favourite Things</h1>
+		<!-- <img class="fav" src="images/puppy.jpg" alt="dog"> -->
+		<img class="fav" src="images/books.jpg" alt="books">
+		<img class="fav" src="images/inspiration/ben-white.jpg" alt="Sunset">
+		<img class="fav" src="images/piles_notebooks.jpg" alt="notebooks">
+		<p>Photo by Simson Petrol on Unsplash </p>
+	</section>
+
+	<div class="flexslider">
+		<ul class="slides">
+			<li><img src="images/inspiration/antonio-ron.jpg" alt ="flowers"></li>
+			<li><img src="images/inspiration/haitao-zeng.jpg" alt="Hallstatt, Austria"></li>
+			<li><img src="images/coffee.jpg"></li>
+			<!-- coffee  by Matt Hoffman on Unsplash -->
+			</ul>
+	</div>
+
+	<section id="contact">
+		<h1>Talk to Me</h1>
+		<a href="http://twitter.com"><img src="images/twitter.png"></a>
+		<a href="http://www.facebook.com"><img src="images/facebook.png"></a>
+		<a href="http://www.linkedin.com"><img src="images/linkedin.png"></a>
+	</section>
+
+	<!-- ADD JQUERY HERE -->
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script src="js/jquery.flexslider-min.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			//all jQuery code here
+
+				//jQuery initializations
+				$('.flexslider').flexslider();
+
+				$(".fav").width(200);
+
+			$(".fav").click(function(){
+				//c	$(document).ready(function(){onsole.log("This works!")
+
+				//$(this).fadeOut('slow').fadeIn('slow');
+
+				//$(this).hide followed by $(this).show can be used to make stuff appear
+				//or it can look like $(this).hide(1000).show(1000);
+
+				//$(this).hide(1000).show(1000);
+
+				$(this).hide(1000).show('slow');
+				//$(this).slideUp(1000).slideDown(1000);
+
+			});
+
+				$(".menu a").click(function(){
+
+
+					//the below is for making the menu component coloured when clicked, and then making the colour disappear when another component is clicked
+				$(".active").removeClass("active");
+				$(this).addClass("active");
+
+				});
+					// $('.flexslider').flexslider();
+					//fading in and out
+          $('.flexslider').flexslider({ animation : "slide" });
+
+
+				//the following code is what makes the website scroll smoothly
+					$(function() {
+  $('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+    && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
+		});
+	</script>
+
+
+	<!-- <div class="flexslider"> -->
+		<!-- <ul class="slides"> -->
+			<!-- <li><img src="images/rotator/image1.jpg"></li>
+			<li><img src="images/rotator/image2.jpg"></li>
+			<li><img src="images/coffee.jpg"></li>
+			<!-- coffee  by Matt Hoffman on Unsplash -->
+			<!-- </ul> --> -->
+
+	</div>
+</body>
+</html>
